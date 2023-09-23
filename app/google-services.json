@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "285094584771",
+    "project_id": "donationapp-366f5",
+    "storage_bucket": "donationapp-366f5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:285094584771:android:83f516a688131264331d76",
+        "android_client_info": {
+          "package_name": "mx.tec.donationapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDXhQ-OsT8pv26q4NcNTC6yE9UFmTRpsYU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
