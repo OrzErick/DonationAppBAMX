@@ -1,24 +1,24 @@
 package mx.tec.donationapp
 
-import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.text.Editable
+import android.view.View
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageView
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 
 class MainActivity : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
+    private var lastToastMessage: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         auth = FirebaseAuth.getInstance()
-
 
         val emailEditText = findViewById<EditText>(R.id.EmailAdresseditText)
         val passwordEditText = findViewById<EditText>(R.id.PasswordeditText)
@@ -29,40 +29,44 @@ class MainActivity : AppCompatActivity() {
             val email = emailEditText.text.toString()
             val password = passwordEditText.text.toString()
 
-            auth.signInWithEmailAndPassword(email, password)
-                .addOnCompleteListener(this) { task ->
-                    if (task.isSuccessful) {
-                        Toast.makeText(this, "LOGIN EXITOSO", Toast.LENGTH_SHORT).show()
-                        // Llamar a menuActivity() después de iniciar sesión exitosamente
-                        //menuActivity()
-                    } else {
-                        Toast.makeText(this, "LOGIN FALLIDO: ${task.exception?.message}", Toast.LENGTH_SHORT).show()
-                    }
-                }
+            signInWithEmailAndPassword(email, password) // Llama a la función para iniciar sesión
         }
 
         signUpButton.setOnClickListener {
-            // Llamar a la función RegistrarActivity al hacer clic en el botón de registro
+            // Llamar a la función signUpActivity al hacer clic en el botón de registro
             signUpActivity()
         }
-
     }
 
-    override fun onStart() {
-        super.onStart()
-        val currentUser = auth.currentUser
-        if (currentUser != null) {
+    fun signInWithEmailAndPassword(email: String, password: String) {
+        try {
+            auth.signInWithEmailAndPassword(email, password).addOnCompleteListener(this) { task ->
+                if (task.isSuccessful) {
+                    lastToastMessage = "LOGIN EXITOSO"
+                    Toast.makeText(this, lastToastMessage, Toast.LENGTH_SHORT).show()
+
+                    // Inicio de sesión exitoso, inicia ButtonNavigationActivity aquí
+                    val intent = Intent(this, ButtonNavigationActivity::class.java)
+                    startActivity(intent)
+                    finish()
+                } else {
+                    lastToastMessage = "LOGIN FALLIDO: ${task.exception?.message}"
+                    Toast.makeText(this, lastToastMessage, Toast.LENGTH_SHORT).show()
+                    findViewById<ImageView>(R.id.ErrorIcon2).visibility = View.VISIBLE
+                    findViewById<ImageView>(R.id.ErrorIcon).visibility = View.VISIBLE
+                }
+            }
+        } catch (e: Exception) {
+            lastToastMessage = "LOGIN FALLIDO: $e"
+            Toast.makeText(this, lastToastMessage, Toast.LENGTH_SHORT).show()
+            findViewById<ImageView>(R.id.ErrorIcon2).visibility = View.VISIBLE
+            findViewById<ImageView>(R.id.ErrorIcon).visibility = View.VISIBLE
         }
     }
-    private fun signUpActivity() {
+
+    fun signUpActivity() {
         val intent = Intent(this, SignupActivity::class.java)
         startActivity(intent)
         finish()
     }
-    //private fun menuActivity(){
-        //val intent = Intent(this, MenuActivity::class.java)
-        //startActivity(intent)
-        //finish()
-    //}
-
 }

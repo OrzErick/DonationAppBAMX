@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:title="Perfil"
+        android:id="@+id/perfil"
+        android:icon="@drawable/perfil_menu_icon"/>
+    <item
+        android:title="Donar"
+        android:id="@+id/donar"
+        android:icon="@drawable/donation_menu_icon"/>
+    <item
+        android:title="Estadisticas"
+        android:id="@+id/score"
+        android:icon="@drawable/score_menu_icon"/>
+</menu>

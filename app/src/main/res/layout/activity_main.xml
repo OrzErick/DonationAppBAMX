@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -9,28 +10,24 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="395dp"
-        android:layout_height="219dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintDimensionRatio="H,2:1"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.034"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/bamx_gdl_logo2" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="sans-serif-black"
         android:text="Bienvenido"
         android:textColor="#DD0031"
-        android:textSize="48sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        android:textSize="32sp"
         app:layout_constraintTop_toBottomOf="@+id/imageView"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <TextView
         android:id="@+id/textView3"
@@ -39,7 +36,7 @@
         android:fontFamily="sans-serif-medium"
         android:text="Iniciar Sesión"
         android:textColor="#F0970B"
-        android:textSize="24sp"
+        android:textSize="24dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -68,7 +65,7 @@
         android:inputType="textEmailAddress"
         android:textColor="#FEFEFE"
         android:textColorHint="#FEFEFE"
-        android:textSize="24sp"
+        android:textSize="24dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -100,7 +97,7 @@
         android:inputType="textPassword"
         android:textColor="#FEFEFE"
         android:textColorHint="#FEFEFE"
-        android:textSize="24sp"
+        android:textSize="24dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imageView3"
@@ -114,7 +111,7 @@
         android:backgroundTint="#DC0031"
         android:fontFamily="sans-serif-medium"
         android:text="Iniciar Sesión"
-        android:textSize="24sp"
+        android:textSize="24dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -128,11 +125,31 @@
         android:backgroundTint="#F0970B"
         android:fontFamily="sans-serif-medium"
         android:text="Registrarse"
-        android:textSize="20sp"
+        android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/IniciarSesionbutton"
         app:layout_constraintVertical_bias="0.188" />
+
+    <ImageView
+        android:id="@+id/ErrorIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/EmailAdresseditText"
+        app:layout_constraintEnd_toEndOf="@+id/EmailAdresseditText"
+        app:layout_constraintTop_toTopOf="@+id/EmailAdresseditText"
+        app:srcCompat="@drawable/baseline_error_24" />
+
+    <ImageView
+        android:id="@+id/ErrorIcon2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/PasswordeditText"
+        app:layout_constraintEnd_toEndOf="@+id/PasswordeditText"
+        app:layout_constraintTop_toTopOf="@+id/PasswordeditText"
+        app:srcCompat="@drawable/baseline_error_24" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

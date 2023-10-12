@@ -5,155 +5,146 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#191919"
-    tools:context=".RegistrarActivity">
+    tools:context=".SignupActivity">
 
-    <LinearLayout
-        android:layout_width="409dp"
-        android:layout_height="729dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintDimensionRatio="H,2:1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/bamx_gdl_logo2" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Registrate"
+        android:textColor="#DD0031"
+        android:textSize="32sp"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <EditText
+        android:id="@+id/NameeditText"
+        android:layout_width="371dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:backgroundTint="#DD0031"
+        android:ems="10"
+        android:fontFamily="sans-serif-medium"
+        android:hint="Ingresa tu Nombre"
+        android:inputType="text"
+        android:textColor="#FEFEFE"
+        android:textColorHint="#F0970B"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <EditText
+        android:id="@+id/EmailRegistereditText"
+        android:layout_width="371dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:backgroundTint="#DD0031"
+        android:ems="10"
+        android:fontFamily="sans-serif-medium"
+        android:hint="Ingresa tu E-mail"
+        android:inputType="textEmailAddress"
+        android:textColor="#FEFEFE"
+        android:textColorHint="#F0970B"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/NameeditText" />
+
+    <EditText
+        android:id="@+id/PasswordRegistereditText"
+        android:layout_width="371dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:backgroundTint="#DD0031"
+        android:ems="10"
+        android:fontFamily="sans-serif-medium"
+        android:hint="Ingresa tu Contraseña"
+        android:inputType="textPassword"
+        android:textColor="#FEFEFE"
+        android:textColorHint="#F0970B"
+        android:textSize="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/EmailRegistereditText" />
 
-        <ImageView
-            android:id="@+id/logoBAMXimageView"
-            android:layout_width="wrap_content"
-            android:layout_height="236dp"
-            android:scaleType="fitStart"
-            app:srcCompat="@drawable/bamx_gdl_logo2" />
+    <EditText
+        android:id="@+id/ConfirmPasswordeditText"
+        android:layout_width="371dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:backgroundTint="#DD0031"
+        android:ems="10"
+        android:fontFamily="sans-serif-medium"
+        android:hint="Confirmar Contraseña"
+        android:inputType="textPassword"
+        android:textColor="#FEFEFE"
+        android:textColorHint="#F0970B"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/PasswordRegistereditText" />
 
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="10dp" />
+    <EditText
+        android:id="@+id/BirthdayeditText"
+        android:layout_width="371dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:backgroundTint="#DD0031"
+        android:ems="10"
+        android:fontFamily="sans-serif-medium"
+        android:hint="Ingrese su fecha de nacimiento (dd/mm/yyyy)"
+        android:inputType="date"
+        android:textColor="#FEFEFE"
+        android:textColorHint="#F0970B"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ConfirmPasswordeditText" />
 
-        <TextView
-            android:id="@+id/RegistrarsetextView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="sans-serif-black"
-            android:text="Creación de Cuenta"
-            android:textAlignment="center"
-            android:textColor="#DD0031"
-            android:textColorHint="#DD0031"
-            android:textSize="34sp"
-            android:visibility="visible" />
+    <Button
+        android:id="@+id/RegistrarseButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="#DD0031"
+        android:fontFamily="sans-serif-medium"
+        android:text="Registrarse"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.484"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/BirthdayeditText" />
 
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="10dp" />
+    <Button
+        android:id="@+id/BackButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#F0970B"
+        android:fontFamily="sans-serif-medium"
+        android:text="Regresar"
+        android:textColor="#FEFEFE"
+        android:textSize="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/RegistrarseButton"
+        app:layout_constraintVertical_bias="0.133" />
 
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="sans-serif-medium"
-            android:text="Ingresa tus datos"
-            android:textAlignment="viewStart"
-            android:textColor="#F0970B"
-            android:textSize="20sp" />
 
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="10dp" />
-
-        <EditText
-            android:id="@+id/NameeditText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:backgroundTint="#F0970B"
-            android:ems="10"
-            android:fontFamily="sans-serif-medium"
-            android:hint="Escribe tu nombre"
-            android:inputType="text"
-            android:minHeight="48dp"
-            android:textColor="#DD0031"
-            android:textColorHint="#DD0031"
-            android:textSize="16sp" />
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="10dp" />
-
-        <EditText
-            android:id="@+id/EmailRegistereditText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:backgroundTint="#F0970B"
-            android:ems="10"
-            android:fontFamily="sans-serif-medium"
-            android:hint="Escribe tu correo electronico"
-            android:inputType="textEmailAddress"
-            android:minHeight="48dp"
-            android:textColor="#DD0031"
-            android:textColorHint="#DD0031"
-            android:textSize="16sp" />
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="10dp" />
-
-        <EditText
-            android:id="@+id/PasswordRegistereditText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:backgroundTint="#F0970B"
-            android:ems="10"
-            android:fontFamily="sans-serif-medium"
-            android:hint="Escribe tu Contraseña"
-            android:inputType="textPassword"
-            android:minHeight="48dp"
-            android:textColor="#DD0031"
-            android:textColorHint="#DD0031"
-            android:textSize="16sp" />
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="10dp" />
-
-        <EditText
-            android:id="@+id/ConfirmPasswordeditText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:backgroundTint="#F0970B"
-            android:ems="10"
-            android:fontFamily="sans-serif-medium"
-            android:hint="Confirme su Contraseña"
-            android:inputType="textPassword"
-            android:minHeight="48dp"
-            android:textColor="#DD0031"
-            android:textColorHint="#DD0031"
-            android:textSize="16sp" />
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="10dp" />
-
-        <Button
-            android:id="@+id/RegistrarseButton"
-            android:layout_width="178dp"
-            android:layout_height="79dp"
-            android:layout_gravity="center"
-            android:backgroundTint="#F0970B"
-            android:fontFamily="sans-serif-black"
-            android:text="Registrarse"
-            android:textSize="24sp" />
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="10dp" />
-
-        <Button
-            android:id="@+id/BackButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:backgroundTint="#DD0031"
-            android:fontFamily="sans-serif-black"
-            android:text="Regresar" />
-    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
