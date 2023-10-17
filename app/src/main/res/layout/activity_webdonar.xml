@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#191919"
+    tools:context=".Donar">
+
+    <LinearLayout
+        android:layout_width="135dp"
+        android:layout_height="78dp"
+        android:layout_gravity="right"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/bamx_gdl_logo2" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-medium"
+            android:text=" DONAR"
+            android:textColor="#F0970B"
+            android:textSize="60sp" />
+
+    </LinearLayout>
+
+    <WebView
+        android:id="@+id/URLwebView"
+        android:layout_width="match_parent"
+        android:layout_height="651dp"
+        android:layout_marginTop="80dp" >
+
+    </WebView>
+
+    <LinearLayout
+        android:layout_width="146dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="85dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/CancelarDonativobutton"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:backgroundTint="#EF960B"
+            android:fontFamily="sans-serif-medium"
+            android:text="Cancelar"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="146dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginLeft="265dp"
+        android:layout_marginBottom="85dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/ConfirmarDonativobutton"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:backgroundTint="#DD0031"
+            android:fontFamily="sans-serif-medium"
+            android:text="Confirmar"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+</FrameLayout>
