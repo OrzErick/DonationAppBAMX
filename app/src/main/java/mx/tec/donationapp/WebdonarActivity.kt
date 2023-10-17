@@ -71,8 +71,5 @@ class WebdonarActivity : AppCompatActivity() {
             .addOnSuccessListener {
                 finish()
             }
-            .addOnFailureListener {
-                // Manejar errores si es necesario
-            }
     }
 }
