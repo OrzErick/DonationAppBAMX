@@ -6,8 +6,10 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import com.google.firebase.Timestamp
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
+import java.text.SimpleDateFormat
 
 class SignupActivity : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
@@ -66,8 +68,11 @@ class SignupActivity : AppCompatActivity() {
                         // Registro exitoso
                         showToast("REGISTRO EXITOSO")
 
+                        // Convierte la fecha de cumpleaños en un objeto Timestamp
+                        val birthdayTimestamp = convertBirthdayToTimestamp(birthday)
+
                         // Guarda el nombre y la fecha de cumpleaños del usuario en Firestore
-                        saveUserDataToFirestore(email, name, birthday)
+                        saveUserDataToFirestore(email, name, birthdayTimestamp)
 
                         // Además, guarda el nombre y el correo en la colección "ID"
                         saveNameAndEmailToIDCollection(email, name)
@@ -82,7 +87,14 @@ class SignupActivity : AppCompatActivity() {
         }
     }
 
-    private fun saveUserDataToFirestore(email: String, name: String, birthday: String) {
+    private fun convertBirthdayToTimestamp(birthday: String): Timestamp {
+        // Supongamos que la fecha tiene el formato "dd/MM/yyyy"
+        val dateFormat = SimpleDateFormat("dd/MM/yyyy")
+        val parsedDate = dateFormat.parse(birthday)
+        return Timestamp(parsedDate)
+    }
+
+    private fun saveUserDataToFirestore(email: String, name: String, birthday: Timestamp) {
         usersCollection.document(email)
             .set(mapOf("nombre" to name, "cumpleanos" to birthday))
             .addOnSuccessListener {
@@ -111,7 +123,9 @@ class SignupActivity : AppCompatActivity() {
             showToast("No se pudo obtener el ID del usuario actual")
         }
     }
+
     private fun showToast(message: String) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
     }
 }
+
