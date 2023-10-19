@@ -138,7 +138,47 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="33dp"
-        android:layout_marginTop="300dp"
+        android:layout_marginTop="400dp"
         android:background="#EF960B"
         android:orientation="vertical" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="33dp"
+        android:layout_marginTop="300dp"
+        android:background="#EF960B"
+        android:orientation="vertical" >
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="450dp"
+        android:orientation="vertical"
+        tools:ignore="ExtraText">
+
+        <TextView
+            android:id="@+id/textView101"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="sans-serif-medium"
+            android:text="Canastas Basicas ofrecidas por tu apoyo: "
+            android:textColor="#DC0131"
+            android:textSize="30dp" />
+
+        <TextView
+            android:id="@+id/CanastasbasicasTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:fontFamily="sans-serif-medium"
+            android:text="0 Canastas"
+            android:textAlignment="center"
+            android:textColor="#EF960B"
+            android:textSize="50dp" />
+    </LinearLayout>
+
 </FrameLayout>

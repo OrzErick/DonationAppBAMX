@@ -109,6 +109,7 @@
         android:fontFamily="sans-serif-medium"
         android:hint="Ingrese su fecha de nacimiento (dd/mm/yyyy)"
         android:inputType="date"
+        android:minHeight="48dp"
         android:textColor="#FEFEFE"
         android:textColorHint="#F0970B"
         android:textSize="16sp"
@@ -145,6 +146,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/RegistrarseButton"
         app:layout_constraintVertical_bias="0.133" />
+
+    <CheckBox
+        android:id="@+id/verPassword2Checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/PasswordRegistereditText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/PasswordRegistereditText"
+        app:layout_constraintVertical_bias="0.600" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

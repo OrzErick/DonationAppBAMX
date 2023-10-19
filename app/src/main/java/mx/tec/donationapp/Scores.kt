@@ -26,6 +26,7 @@ class Scores : Fragment() {
         val view = inflater.inflate(R.layout.fragment_scores, container, false)
 
         val totalDonadoTextView = view.findViewById<TextView>(R.id.TotaldonadoTextView)
+        val canastasBasicasTextView = view.findViewById<TextView>(R.id.CanastasbasicasTextView)
 
         // Obtén el correo electrónico del usuario actual
         val userEmail = auth.currentUser?.email
@@ -43,6 +44,10 @@ class Scores : Fragment() {
                         if (cantidadDonada != null) {
                             // Actualiza el TextView con la cantidad donada
                             totalDonadoTextView.text = "$$cantidadDonada.00"
+
+                            // Realiza la división y muestra el resultado en el TextView
+                            val canastasBasicas = cantidadDonada / 400
+                            canastasBasicasTextView.text = "$canastasBasicas Canastas Básicas"
                         }
                     }
                 }

@@ -1,9 +1,12 @@
 package mx.tec.donationapp
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.method.PasswordTransformationMethod
 import android.widget.Button
+import android.widget.CheckBox
 import android.widget.EditText
 import android.widget.Toast
 import com.google.firebase.Timestamp
@@ -16,6 +19,7 @@ class SignupActivity : AppCompatActivity() {
     private val db = FirebaseFirestore.getInstance()
     private val usersCollection = db.collection("Usuarios")
 
+    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_signup)
@@ -29,6 +33,18 @@ class SignupActivity : AppCompatActivity() {
         val passwordRegisterEditText = findViewById<EditText>(R.id.PasswordRegistereditText)
         val confirmPasswordEditText = findViewById<EditText>(R.id.ConfirmPasswordeditText)
         val birthdayEditText = findViewById<EditText>(R.id.BirthdayeditText) // Agregado para obtener la fecha de cumpleaños
+        val verPassword2Checkbox = findViewById<CheckBox>(R.id.verPassword2Checkbox)
+
+        // Establece el Listener para CheckBox
+        verPassword2Checkbox.setOnCheckedChangeListener { buttonView, isChecked ->
+            if (isChecked) {
+                // Mostrar la contraseña
+                passwordRegisterEditText.transformationMethod = null
+            } else {
+                // Ocultar la contraseña
+                passwordRegisterEditText.transformationMethod = PasswordTransformationMethod.getInstance()
+            }
+        }
 
         backButton.setOnClickListener {
             navigateToMainActivity()

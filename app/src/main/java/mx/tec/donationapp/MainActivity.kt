@@ -3,8 +3,10 @@ package mx.tec.donationapp
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.method.PasswordTransformationMethod
 import android.view.View
 import android.widget.Button
+import android.widget.CheckBox
 import android.widget.EditText
 import android.widget.ImageView
 import android.widget.Toast
@@ -24,6 +26,18 @@ class MainActivity : AppCompatActivity() {
         val passwordEditText = findViewById<EditText>(R.id.PasswordeditText)
         val logInButton = findViewById<Button>(R.id.IniciarSesionbutton)
         val signUpButton = findViewById<Button>(R.id.Registrarsebutton)
+        val verPasswordCheckbox = findViewById<CheckBox>(R.id.verPasswordCheckbox)
+
+        // Establece el Listener para CheckBox
+        verPasswordCheckbox.setOnCheckedChangeListener { buttonView, isChecked ->
+            if (isChecked) {
+                // Mostrar la contraseña
+                passwordEditText.transformationMethod = null
+            } else {
+                // Ocultar la contraseña
+                passwordEditText.transformationMethod = PasswordTransformationMethod.getInstance()
+            }
+        }
 
         logInButton.setOnClickListener {
             val email = emailEditText.text.toString()
